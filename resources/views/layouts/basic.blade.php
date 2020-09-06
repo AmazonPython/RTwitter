@@ -28,7 +28,9 @@
             <img style="border:none" src="{{ url('/image/logo.png') }}" width="192" height="85" alt="Retwis"/><img style="border:none" src="{{ url('/image/leaderboard-728x90.svg') }}" width="576" height="85" alt="PHP: The Right Way"/>
         </a>
         <div id="navbar">
-            <a class="navbar" href="{{ url('home/timeline') }}">timeline</a> |
+
+            @yield('linkname')
+
             <a class="navbar" href="{{ route('logout') }}"
                onclick="event.preventDefault();
                 document.getElementById('logout-form').submit();">
@@ -44,6 +46,7 @@
 
     <div id="footer">RTwitter is a very simple Twitter clone written in PHP as example application of the
         <a class="navbar" href="http://redis.io">Redis database</a>
+        <a style="padding-left: 15%;" href="#"><img src="{{ url('/image/top.png') }}" alt="back to the top"></a>
     </div>
 </div>
 </body>

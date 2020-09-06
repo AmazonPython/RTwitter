@@ -23,13 +23,12 @@ BODY {
 }
 
 #header {
-    width: 885px;
+    width: 890px;
     height: 85px;
     border-bottom: 1px #aaa solid;
     padding: 5px;
     margin-bottom: 10px;
     position: relative;
-
 }
 
 #header H1 {
@@ -51,9 +50,10 @@ BODY {
 }
 
 #footer {
-    margin-top: 20px;
+    padding-top: 6px;
+    margin-top: 10px;
     border-top: 1px #aaa solid;
-    font-size: 12px;
+    font-size: 14px;
     color: #666;
     text-align: center;
 }
@@ -73,12 +73,19 @@ BODY {
 #postform {
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
-    font-size: 22px;
+    font-size: 24px;
     border-radius: 5px;
     position: relative;
-    padding: 18px;
+    padding: 12px;
     margin: 10px;
     background-color: #eee;
+}
+
+#postform textarea{
+    width: 650px;
+    margin-top: 12px;
+    border-radius: 5px;
+    font-size: 18px;
 }
 
 .rightlink {
@@ -122,7 +129,7 @@ a.button {
     right: 3px;
     top: 3px;
     background-color: #ccc;
-    width: 200px;
+    width: 190px;
     font-size: 16px;
     color: white;
     padding: 3px;
@@ -130,14 +137,15 @@ a.button {
 
 #welcomebox{
     width: 890px;
-    height: 450px;
+    height: 550px;
     padding-top: 10px;
     position: relative;
-    font-size: 14px;
+    font-size: 15px;
+    line-height: 1.5;
 }
 #registerbox{
     width: 400px;
-    height: 400px;
+    height: 450px;
     background-color: #e3e8e4;
     float: right;
     padding: 5px;

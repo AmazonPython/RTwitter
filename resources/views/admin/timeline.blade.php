@@ -1,6 +1,11 @@
 @extends('layouts.basic')
 
-@section('title', 'RTwitter TimeLine - Wake up what happened in the world')
+@section('title', 'TimeLine - What happened in the world after waking up')
+
+@section('linkname')
+    <a class="navbar" href="{{ url('home') }}">Home</a> |
+@endsection
+
 @section('content')
     <h2>Timeline</h2>
     <i>Latest registered users (an example of sorted sets)</i><br>

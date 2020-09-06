@@ -18,8 +18,9 @@ Auth::routes();
 Route::group(['middleware' => 'auth', 'prefix' => 'home'], function() {
     //User home
     Route::get('/', 'AdminController@index');
-    Route::get('user', 'AdminController@user');
     Route::get('timeline', 'AdminController@timeline');
+
+
 
     //My resume
     Route::get('resume', 'ResumeController@index');
