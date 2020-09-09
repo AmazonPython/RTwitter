@@ -100,10 +100,15 @@ BODY {
 }
 
 a.username {
+    max-width: 800px;
+    max-height: 95px;
+    font-size: 18px;
+    overflow: hidden;
+    display: block;
     text-decoration: none;
-    font-weight: bold;
     color: #629e43;
     margin-right: 10px;
+    text-overflow: ellipsis;
 }
 
 h2.username {
@@ -119,6 +124,27 @@ a.button {
     background-color: #eee;
     color: #444;
     font-size: 12px;
+}
+.tweet_button {
+    border: solid skyblue;
+    color: skyblue;
+    padding: 6px 12px ;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    border-radius: 15px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+.tweet_button:hover {
+    background-color: skyblue;
+    color: white;
+    border-radius: 15px;
+    font-size: 18px;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
 #homeinfobox {
