@@ -26,6 +26,13 @@
                         <span><strong>{{ $errors->first('password') }}</strong></span>
                     @endif
                     <tr>
+                        <td>
+                            @if (Route::has('password.request'))
+                                <a class="navbar" href="{{ route('password.request') }}">
+                                    {{ __('Forget password?') }}
+                                </a>
+                            @endif
+                        </td>
                         <td colspan="2" align="right">
                             <input type="submit" name="doit" value="Login">
                         </td>
