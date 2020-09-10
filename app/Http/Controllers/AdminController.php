@@ -12,9 +12,8 @@ class AdminController extends Controller
     public function index()
     {
         //If the user is logged in, it will be redirected to here
-        $user_id = DB::table('tweets')->select('content')->where('user_id', '=', 'Auth::id')->get();
         $tweets = DB::table('tweets')->get();
-        return view('admin/user', ['tweets' => $tweets, 'user_id' => $user_id]);
+        return view('admin/user', ['tweets' => $tweets]);
     }
 
     //Timeline
