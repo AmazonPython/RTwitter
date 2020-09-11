@@ -18,17 +18,26 @@
     @foreach ($tweets as $tweet)
     <div class="post">
         <a class="username" href="{{ url('home') }}">
-            <img width="5%" height="5%" src="{{ url('/image/hot.png') }}">{{ $tweet->content }}
+            <img width="5%" height="5%" src="{{ url('/image/hot.png') }}"><strong>{{ Auth::user()->name }}</strong>
         </a>
         <br />
+        <a class="username" href="{{ url('home/tweets/'.$tweet->id) }}">
+            {{ $tweet->content }}
+        </a>
+
+        <br />
+
         <i>
             {{ $tweet->created_at }}
-            <img style="padding-left: 10%" width="4%" src="{{ (url('/image/like.jpg')) }}">
-            123456
-            <img style="padding-left: 15%" width="4%" src="{{ (url('/image/forward.jpg')) }}">
-            123456
-            <img style="padding-left: 20%" width="4%" src="{{ (url('/image/reply.png')) }}">
-            123456
+            <a class="navbar" href="">
+                <img style="padding-left: 10%" width="4%" src="{{ (url('/image/like.jpg')) }}">123456
+            </a>
+            <a class="navbar" href="">
+                <img style="padding-left: 15%" width="4%" src="{{ (url('/image/forward.jpg')) }}">123456
+            </a>
+            <a class="navbar" href="{{ url('home/tweets/'.$tweet->id) }}">
+                <img style="padding-left: 20%" width="4%" src="{{ (url('/image/reply.png')) }}">123456
+            </a>
         </i>
     </div>
     @endforeach
@@ -38,17 +47,25 @@
     <div class="post">
         <a class="username" href="{{ url('home') }}">
             <strong>{{ Auth::user()->name }}</strong><img width="3%" src="{{ url('/image/crown.png') }}">
-            <br /><br />{{ $tweet->content }}
+            <br /><br />
         </a>
+        <a class="username" href="{{ url('home/tweets/'.$tweet->id) }}">
+            {{ $tweet->content }}
+        </a>
+
         <br />
+
         <i>
             {{ $tweet->created_at }}
-            <img style="padding-left: 10%" width="4%" src="{{ (url('/image/like.jpg')) }}">
-            123456
-            <img style="padding-left: 15%" width="4%" src="{{ (url('/image/forward.jpg')) }}">
-            123456
-            <img style="padding-left: 20%" width="4%" src="{{ (url('/image/reply.png')) }}">
-            123456
+            <a class="navbar" href="">
+                <img style="padding-left: 10%" width="4%" src="{{ (url('/image/like.jpg')) }}">123456
+            </a>
+            <a class="navbar" href="">
+                <img style="padding-left: 15%" width="4%" src="{{ (url('/image/forward.jpg')) }}">123456
+            </a>
+            <a class="navbar" href="{{ url('home/tweets/'.$tweet->id) }}">
+                <img style="padding-left: 20%" width="4%" src="{{ (url('/image/reply.png')) }}">123456
+            </a>
         </i>
     </div>
     @endforeach

@@ -60,4 +60,16 @@ class AdminController extends Controller
         Tweet::find($id)->delete();
         return redirect()->back()->withInput()->withErrors('Deleted successfully');
     }
+
+    //Like tweets
+    public function zan(Request $request, $tweet)
+    {
+        $param = [
+            'user_id' => \Auth::id(),
+            'tweet_id' => $tweet->id,
+        ];
+
+        Like::firstOrCreate($param);
+        return back();
+    }
 }

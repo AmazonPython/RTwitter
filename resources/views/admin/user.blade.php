@@ -24,6 +24,7 @@
         <form method="POST" action="{{ url('home/tweets') }}">
             {!! csrf_field() !!}
             <a>Dear {{ Auth::user()->name }}, what you are doing?</a>
+            <a class="navbar" style="padding-left: 20%;" href="{{ url('home') }}">Setup</a>
             <br>
             <table>
                 <tr>
@@ -42,9 +43,11 @@
 
         @foreach ($tweets as $tweet)
         <div class="post">
-            <a class="username" href="{{ url('home') }}">
+            <a class="username">
                 <strong>{{ Auth::user()->name }}</strong><img width="3%" src="{{ url('/image/crown.png') }}">
                 <br /><br />
+            </a>
+            <a class="username" href="{{ url('home/tweets/'.$tweet->id) }}">
                 {{ $tweet->content }}
             </a>
             <form action="{{ url('home/tweets/'.$tweet->id) }}" method="POST" style="display: inline;">

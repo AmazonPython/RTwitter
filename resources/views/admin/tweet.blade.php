@@ -4,7 +4,7 @@
 
 @section('linkname')
     <a class="navbar" href="{{ url('home/timeline') }}">Timeline</a> |
-    <a class="navbar" href="{{ url('home/user') }}">User</a>
+    <a class="navbar" href="{{ url('home') }}">User</a>
 @endsection
 
 @section('content')
