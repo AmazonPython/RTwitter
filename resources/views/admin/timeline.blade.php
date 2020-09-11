@@ -38,7 +38,7 @@
     <div class="post">
         <a class="username" href="{{ url('home') }}">
             <strong>{{ Auth::user()->name }}</strong><img width="3%" src="{{ url('/image/crown.png') }}">
-            <br /><br />{{ $tweet->content }}{{ $tweet->content }}{{ $tweet->content }}{{ $tweet->content }}{{ $tweet->content }}{{ $tweet->content }}{{ $tweet->content }}{{ $tweet->content }}{{ $tweet->content }}{{ $tweet->content }}{{ $tweet->content }}{{ $tweet->content }}{{ $tweet->content }}{{ $tweet->content }}{{ $tweet->content }}{{ $tweet->content }}
+            <br /><br />{{ $tweet->content }}
         </a>
         <br />
         <i>

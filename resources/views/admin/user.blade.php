@@ -44,22 +44,28 @@
         <div class="post">
             <a class="username" href="{{ url('home') }}">
                 <strong>{{ Auth::user()->name }}</strong><img width="3%" src="{{ url('/image/crown.png') }}">
-                <br /><br />{{ $tweet->content }}
+                <br /><br />
+                {{ $tweet->content }}
             </a>
-            <br />
             <form action="{{ url('home/tweets/'.$tweet->id) }}" method="POST" style="display: inline;">
                 {{ method_field('DELETE') }}
                 {{ csrf_field() }}
                 <button type="submit" class="btn btn-danger">Delete</button>
             </form>
+
+            <br />
+
             <i>
                 {{ $tweet->created_at }}
-                <img style="padding-left: 10%" width="4%" src="{{ (url('/image/like.jpg')) }}">
-                123456
-                <img style="padding-left: 15%" width="4%" src="{{ (url('/image/forward.jpg')) }}">
-                123456
-                <img style="padding-left: 20%" width="4%" src="{{ (url('/image/reply.png')) }}">
-                123456
+                <a class="navbar" href="">
+                    <img style="padding-left: 10%" width="4%" src="{{ (url('/image/like.jpg')) }}">123456
+                </a>
+                <a class="navbar" href="">
+                    <img style="padding-left: 15%" width="4%" src="{{ (url('/image/forward.jpg')) }}">123456
+                </a>
+                <a class="navbar" href="{{ url('home/tweets/'.$tweet->id) }}">
+                    <img style="padding-left: 20%" width="4%" src="{{ (url('/image/reply.png')) }}">123456
+                </a>
             </i>
         </div>
         @endforeach

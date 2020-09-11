@@ -20,9 +20,10 @@ Route::group(['middleware' => 'auth', 'prefix' => 'home'], function() {
     Route::get('/', 'AdminController@index');
     Route::get('timeline', 'AdminController@timeline');
 
-    //Tweets route, have CURD function配置资源路由得到7条路由配置，完成增删改查操作
+    //Tweets route. Configure resource routing, With add, show and delete functions
     Route::post('tweets', 'AdminController@store');
     Route::delete('tweets/{tweet}', 'AdminController@destroy');
+    Route::get('tweets/{tweet}', 'AdminController@show');
 
     //My resume
     Route::get('resume', 'ResumeController@index');

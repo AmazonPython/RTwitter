@@ -27,9 +27,9 @@ class AdminController extends Controller
     //Post a new tweet
     public function store(Request $request)
     {
-        //A require field in the tweets table, Maximum length 191
+        //A require field in the tweets table, Maximum length 255
         $this->validate($request, [
-            'content' => 'required|unique:tweets|max:191'
+            'content' => 'required|unique:tweets|max:255'
         ]);
 
         $tweet = new Tweet;
@@ -48,33 +48,10 @@ class AdminController extends Controller
         }
     }
 
-    //Edit a tweet
-    public function edit($id)
+    //Tweet details
+    public function show($id)
     {
-        //Get id and redirect to edit page of tweet
-        return view('admin/edit')->withTweet(Tweet::find($id));
-    }
-
-    public function update(Request $request, $id)
-    {
-        //Upload data to the database to update selected tweet
-        $this->validate($request, [
-
-            'content' => 'required|tweets,content,'.$id.'|max:191'
-
-        ]);
-
-        $tweet = Tweet::find($id);
-
-        $tweet->content = $request->get('content');
-
-        if ($tweet->save()){
-
-            return redirect('home');
-        }else{
-
-            return redirect()->back()->withInput()->withErrors('Edit error!');
-        }
+        return view('admin/tweet')->withTweet(Tweet::find($id));
     }
 
     //Delete a tweet
